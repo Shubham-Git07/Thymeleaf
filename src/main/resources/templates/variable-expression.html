@@ -9,6 +9,10 @@
 <body>
 
 <h1>Understanding Variable expression</h1>
+<!--message expressions can be accessed anywhere-->
+<h2 th:text="#{app.name}"></h2>
+<h2 th:text="#{app.welcome}"></h2>
+
 <h2>User Details : </h2>
 <div>
     <p> Name : <strong th:text="${user.name}"></strong></p>

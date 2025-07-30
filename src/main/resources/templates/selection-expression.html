@@ -9,6 +9,10 @@
 <body>
 
 <h1>Understanding Selection Expression</h1>
+<!--message expressions can be accessed anywhere-->
+<h2 th:text="#{app.name}"></h2>
+<h2 th:text="#{app.welcome}"></h2>
+
 <h2>User Details : </h2>
 <div th:object="${user}">
     <p>Name : <strong th:text="*{name}"></strong></p>

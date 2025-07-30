@@ -22,4 +22,12 @@ public class UserController {
         return "selection-expression";
     }
 
+    // message expressions are used to access text from message.properties file
+    @GetMapping("/message-expression")
+    public String messageExpression(){
+        return "message-expression";
+    }
+
+
+
 }
