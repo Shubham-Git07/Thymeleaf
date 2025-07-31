@@ -5,6 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class UserController {
 
@@ -20,7 +23,7 @@ public class UserController {
     @GetMapping("/selection-expression")
     public String selectionExpression(Model model) {
         User user = new User("Shubham", "shubh@gmail.com", "ADMIN", "male");
-        model.addAttribute("user", user);
+        model.addAttribute("user1", user);
         return "selection-expression";
     }
 
@@ -41,7 +44,23 @@ public class UserController {
 
     // fragment expression
     @GetMapping("/fragment-expression")
-    public String fragmentExpression(){
+    public String fragmentExpression() {
         return "fragment-expression";
+    }
+
+    // th:each method
+    @GetMapping("/getAllUsers")
+    public String users(Model model) {
+        User admin = new User("Admin", "admin@gmail.com", "ADMIN", "male");
+        User ramesh = new User("Ramesh", "ramesh@gmail.com", "USER", "male");
+        User meena = new User("Meena", "meena@gmail.com", "USER", "female");
+
+        List<User> list = new ArrayList<>();
+        list.add(admin);
+        list.add(ramesh);
+        list.add(meena);
+
+        model.addAttribute("users", list);
+        return "getAllUsers";
     }
 }
