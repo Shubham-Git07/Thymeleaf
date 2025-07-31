@@ -34,8 +34,14 @@ public class UserController {
     // link expression
     @GetMapping("/link-expression")
     public String linkExpression(Model model) {
+        // to pass parameter to the link url
         model.addAttribute("id", 1);
         return "link-expression";
     }
 
+    // fragment expression
+    @GetMapping("/fragment-expression")
+    public String fragmentExpression(){
+        return "fragment-expression";
+    }
 }
