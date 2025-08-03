@@ -9,8 +9,8 @@
 <!--th:replace will replace this div with header.html fragment div
     th:insert will insert the div in header.html here with respective div -->
 <h2>Fragment Expression Demo</h2>
-<div th:replace="~{common/header :: header}"></div>
-<!-- <div th:insert="~{common/header :: header}"></div> -->
+<!--<div th:replace="~{common/header :: header}"></div>-->
+ <div th:insert="~{common/header :: header}"></div>
 <div>
     <h1>Page Body</h1>
 </div>

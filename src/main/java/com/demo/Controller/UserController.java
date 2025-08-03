@@ -63,4 +63,21 @@ public class UserController {
         model.addAttribute("users", list);
         return "getAllUsers";
     }
+
+    // th:if , th:unless
+    @GetMapping("/if-unless")
+    public String ifUnless(Model model){
+        User admin = new User("Admin", "admin@gmail.com", "ADMIN", "male");
+        User ramesh = new User("Ramesh", "ramesh@gmail.com", "USER", "male");
+        User meena = new User("Meena", "meena@gmail.com", "USER", "female");
+
+        List<User> list = new ArrayList<>();
+        list.add(admin);
+        list.add(ramesh);
+        list.add(meena);
+
+        model.addAttribute("users", list);
+
+        return "if-unless";
+    }
 }
